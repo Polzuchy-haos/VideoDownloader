@@ -1,4 +1,4 @@
-# Video Download
+# VideoDownloader
 
 Расширение для **Firefox** и **Google Chrome**. Перехватывает видеопотоки из плееров **Kodik**,
 **Alloha** и **CVH** (и вообще любых плееров на HLS/MP4) на сайте yummyani и позволяет их скачать.
@@ -14,9 +14,9 @@ node tools/build.js
 | Файл / папка | Для чего |
 |---|---|
 | `dist/chrome/` | Chrome: «Загрузить распакованное расширение» |
-| `dist/dreamcast-downloadex-<версия>-chrome.zip` | Chrome: архив той же сборки |
+| `dist/videodownloader-<версия>-chrome.zip` | Chrome: архив той же сборки |
 | `dist/firefox/` | Firefox: временная установка |
-| `dist/dreamcast-downloadex-<версия>-firefox.xpi` | Firefox: архив для подписи/постоянной установки |
+| `dist/videodownloader-<версия>-firefox.xpi` | Firefox: архив для подписи/постоянной установки |
 
 ## Установка
 
@@ -39,7 +39,7 @@ node tools/build.js
   `npx web-ext sign --channel=unlisted --source-dir dist/firefox --api-key=... --api-secret=...`.
   Ключи выдаются на addons.mozilla.org → «Инструменты» → «Управление ключами API».
 - Либо используйте Firefox Developer Edition / Nightly / ESR с `xpinstall.signatures.required = false`
-  в `about:config` и установите `dist/dreamcast-downloadex-<версия>-firefox.xpi`.
+  в `about:config` и установите `dist/videodownloader-<версия>-firefox.xpi`.
 
 ## Использование
 

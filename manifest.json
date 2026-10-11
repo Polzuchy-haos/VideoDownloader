@@ -1,11 +1,11 @@
 {
   "manifest_version": 2,
-  "name": "Dreamcast DownloadEx",
-  "version": "1.1.0",
+  "name": "VideoDownloader",
+  "version": "1.1.1",
   "description": "Перехват и скачивание видео из плееров Kodik, Alloha, CVH (HLS / MP4).",
   "browser_specific_settings": {
     "gecko": {
-      "id": "dreamcast-downloadex@local",
+      "id": "videodownloader@local",
       "strict_min_version": "96.0"
     }
   },
@@ -50,7 +50,7 @@
     }
   },
   "browser_action": {
-    "default_title": "Dreamcast DownloadEx",
+    "default_title": "VideoDownloader",
     "default_icon": {
       "16": "icons/icon-16.png",
       "32": "icons/icon-32.png"

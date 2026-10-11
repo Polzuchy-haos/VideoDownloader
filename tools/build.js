@@ -3,8 +3,8 @@
 // Результат:
 //   dist/firefox/                                  — распакованное расширение (MV2)
 //   dist/chrome/                                   — распакованное расширение (MV3), «Загрузить распакованное»
-//   dist/dreamcast-downloadex-<версия>-firefox.xpi — архив для подписи на AMO / установки
-//   dist/dreamcast-downloadex-<версия>-chrome.zip  — архив для Chrome
+//   dist/videodownloader-<версия>-firefox.xpi — архив для подписи на AMO / установки
+//   dist/videodownloader-<версия>-chrome.zip  — архив для Chrome
 'use strict';
 
 const fs = require('fs');
@@ -139,7 +139,7 @@ for (const [name, t] of Object.entries(TARGETS)) {
   const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, t.manifest), 'utf8'));
   manifest.version = version; // одна версия на обе сборки — из корневого manifest.json
   fs.writeFileSync(path.join(out, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
-  const archive = path.join(DIST, `dreamcast-downloadex-${version}-${name}.${t.archive}`);
+  const archive = path.join(DIST, `videodownloader-${version}-${name}.${t.archive}`);
   zip(out, archive);
   console.log(`${name.padEnd(8)} → ${path.relative(ROOT, out)}  +  ${path.relative(ROOT, archive)}`);
 }
