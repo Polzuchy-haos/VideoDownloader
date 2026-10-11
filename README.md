@@ -1,4 +1,4 @@
-# Dreamcast DownloadEx
+# Video Download
 
 Расширение для **Firefox** и **Google Chrome**. Перехватывает видеопотоки из плееров **Kodik**,
 **Alloha** и **CVH** (и вообще любых плееров на HLS/MP4) на сайте yummyani и позволяет их скачать.
