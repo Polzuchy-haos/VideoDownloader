@@ -1,0 +1,118 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1d1d22;
+  --muted: #6b6b76;
+  --card: #f4f4f7;
+  --border: #dedee5;
+  --accent: #e8475f;
+  --accent-fg: #ffffff;
+  --ok: #2e9b5b;
+  --err: #c9343a;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1b22;
+    --fg: #ececf1;
+    --muted: #a0a0ad;
+    --card: #2a2a33;
+    --border: #3a3a45;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  width: 480px;
+  margin: 0;
+  padding: 10px 12px 12px;
+  background: var(--bg);
+  color: var(--fg);
+  font: 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+h1 { font-size: 15px; margin: 0; }
+h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 12px 0 6px; }
+
+button, select, input[type=text] {
+  font: inherit;
+  color: inherit;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+button { cursor: pointer; }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); font-weight: 600; }
+button.ghost { background: transparent; }
+button:disabled { opacity: .5; cursor: default; }
+button.wide { width: 100%; padding: 8px; font-size: 14px; }
+
+.small { font-size: 11px; margin: 4px 0 8px; }
+.card.best { border-color: var(--accent); }
+.badge.best { background: var(--accent); color: var(--accent-fg); }
+
+details#settings { color: var(--muted); }
+details#settings summary { cursor: pointer; }
+details#settings label { display: block; margin: 4px 0 0 4px; color: var(--fg); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.row { display: flex; gap: 6px; align-items: center; margin-top: 6px; }
+.row > input[type=text] { flex: 1; min-width: 0; }
+.row > select { flex: 1; min-width: 0; }
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--border);
+  margin-right: 4px;
+}
+.badge.kodik { background: #3d7bd9; color: #fff; }
+.badge.alloha { background: #8d4bd6; color: #fff; }
+.badge.cvh { background: #d98a1f; color: #fff; }
+
+.url {
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+
+.hint { color: var(--muted); }
+.error { color: var(--err); }
+.ok { color: var(--ok); }
+
+.progress {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border);
+  overflow: hidden;
+  margin-top: 6px;
+}
+.progress > div { height: 100%; background: var(--accent); width: 0; transition: width .3s; }
+
+.job-head { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.job-name { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.job-meta { font-size: 11px; color: var(--muted); margin-top: 4px; }

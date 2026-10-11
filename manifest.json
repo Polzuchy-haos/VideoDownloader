@@ -1,0 +1,60 @@
+{
+  "manifest_version": 2,
+  "name": "Dreamcast DownloadEx",
+  "version": "1.1.0",
+  "description": "Перехват и скачивание видео из плееров Kodik, Alloha, CVH (HLS / MP4).",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "dreamcast-downloadex@local",
+      "strict_min_version": "96.0"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "downloads",
+    "tabs",
+    "webNavigation",
+    "storage",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": [
+      "lib/compat.js",
+      "lib/util.js",
+      "lib/m3u8.js",
+      "lib/players.js",
+      "lib/engine.js",
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/relay.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "commands": {
+    "pick-player": {
+      "suggested_key": { "default": "Alt+Shift+D" },
+      "description": "Выбрать плеер на странице и скачать видео из него"
+    }
+  },
+  "browser_action": {
+    "default_title": "Dreamcast DownloadEx",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    },
+    "default_popup": "popup/popup.html"
+  }
+}

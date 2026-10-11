@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>Dreamcast DownloadEx</h1>
+    <button id="clear" class="ghost" title="Очистить список найденных потоков">Очистить</button>
+  </header>
+
+  <button id="pick" class="primary wide">🎯 Выбрать плеер на странице</button>
+  <p class="hint small">Наведите курсор на плеер и кликните — появится панель только с его видео. Горячая клавиша: Alt+Shift+D.</p>
+  <p id="pickError" class="error small" hidden></p>
+
+  <details id="settings">
+    <summary>Настройки</summary>
+    <label><input type="checkbox" id="saveAs"> Спрашивать, куда сохранять</label>
+    <label><input type="checkbox" id="deepSniffAll"> Глубокий анализ на всех сайтах</label>
+    <label>Параллельных загрузок сегментов:
+      <select id="concurrency">
+        <option>2</option><option>4</option><option>6</option><option>8</option><option>12</option>
+      </select>
+    </label>
+  </details>
+
+  <section>
+    <h2>Все найденные видео</h2>
+    <div id="streams"></div>
+    <label id="showChildrenRow" class="hint small" hidden>
+      <input type="checkbox" id="showChildren"> Показать дублирующие варианты (<span id="childCount">0</span>)
+    </label>
+    <p id="empty" class="hint" hidden>
+      Ничего не найдено. Выберите озвучку и серию, запустите воспроизведение в плеере
+      (Kodik / Alloha / CVH) и откройте это окно снова.
+    </p>
+  </section>
+
+  <section id="jobsSection" hidden>
+    <h2>Загрузки</h2>
+    <div id="jobs"></div>
+  </section>
+
+  <script src="../lib/compat.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
